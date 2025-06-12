@@ -1,9 +1,30 @@
 
-// Navigation et menu mobile
+// Attendre que tous les composants soient chargés avant d'initialiser
+document.addEventListener('componentsLoaded', function() {
+    initializeApp();
+});
+
+// Si les composants sont déjà chargés (fallback)
 document.addEventListener('DOMContentLoaded', function() {
+    // Attendre un peu au cas où les composants se chargent rapidement
+    setTimeout(() => {
+        if (document.querySelector('.navbar')) {
+            initializeApp();
+        }
+    }, 100);
+});
+
+function initializeApp() {
     const navbar = document.getElementById('navbar');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
+    
+    // Vérifier que les éléments existent
+    if (!navbar || !mobileMenuBtn || !navMenu) {
+        console.warn('Navigation elements not found, retrying...');
+        setTimeout(initializeApp, 100);
+        return;
+    }
     
     // Effet de scroll sur la navbar
     window.addEventListener('scroll', function() {
@@ -54,26 +75,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const answer = item.querySelector('.faq-answer');
         const toggle = item.querySelector('.faq-toggle');
         
-        question.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-            
-            // Fermer tous les autres items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').classList.remove('active');
+        if (question && answer && toggle) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Fermer tous les autres items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle l'item actuel
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                    answer.classList.add('active');
                 }
             });
-            
-            // Toggle l'item actuel
-            if (isActive) {
-                item.classList.remove('active');
-                answer.classList.remove('active');
-            } else {
-                item.classList.add('active');
-                answer.classList.add('active');
-            }
-        });
+        }
     });
     
     // Animation d'apparition des éléments au scroll
@@ -91,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observer les sections et cartes
-    const animatedElements = document.querySelectorAll('.benefit-card, .testimonial-card, .section-header');
+    const animatedElements = document.querySelectorAll('.benefit-card, .section-header');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
@@ -224,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
-});
+}
 
 // Fonction utilitaire pour débouncer les événements
 function debounce(func, wait, immediate) {
