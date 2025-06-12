@@ -1,12 +1,13 @@
-
 /* Reset et variables CSS */
 :root {
-    --primary-color: #9b87f5;
-    --primary-dark: #7c3aed;
-    --secondary-color: #fbbf24;
-    --accent-pink: #fda4af;
-    --accent-peach: #fed7aa;
-    --light-purple: #f3f0ff;
+    --primary-color: #2d5a47;
+    --primary-dark: #1e3d2f;
+    --secondary-color: #f4c2a7;
+    --accent-pink: #f4c2a7;
+    --accent-peach: #f4c2a7;
+    --accent-gold: #d4a574;
+    --accent-emerald: #2d5a47;
+    --light-purple: #f8f4f1;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -60,7 +61,7 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--accent-emerald);
     color: var(--white);
 }
 
@@ -70,18 +71,18 @@ body {
 }
 
 .btn-secondary {
-    background-color: var(--white);
-    color: var(--primary-dark);
+    background-color: var(--accent-peach);
+    color: var(--accent-emerald);
 }
 
 .btn-secondary:hover {
-    background-color: var(--gray-100);
+    background-color: var(--accent-gold);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--primary-dark);
-    border: 2px solid var(--primary-dark);
+    color: var(--accent-emerald);
+    border: 2px solid var(--accent-emerald);
 }
 
 .btn-outline:hover {
@@ -126,7 +127,7 @@ body {
 .brand-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-dark);
+    color: var(--accent-emerald);
 }
 
 .nav-menu {
@@ -179,8 +180,8 @@ body {
 .hero-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: rgba(251, 191, 36, 0.6);
-    color: var(--primary-dark);
+    background-color: var(--accent-peach);
+    color: var(--accent-emerald);
     border-radius: 2rem;
     font-weight: 500;
     font-size: 0.875rem;
@@ -305,8 +306,8 @@ body {
 .section-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: rgba(155, 135, 245, 0.3);
-    color: var(--primary-dark);
+    background-color: var(--accent-peach);
+    color: var(--accent-emerald);
     border-radius: 2rem;
     font-weight: 500;
     font-size: 0.875rem;
@@ -339,7 +340,7 @@ body {
 
 .benefit-card {
     background-color: var(--white);
-    border: 1px solid rgba(155, 135, 245, 0.2);
+    border: 1px solid var(--accent-peach);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -349,6 +350,7 @@ body {
 .benefit-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent-emerald);
 }
 
 .benefit-icon {
@@ -388,7 +390,7 @@ body {
     width: 28rem;
     height: 28rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(155, 135, 245, 0.5), rgba(251, 191, 36, 0.4));
+    background: linear-gradient(135deg, var(--accent-peach), var(--accent-gold));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -419,14 +421,16 @@ body {
     top: 1.25rem;
     left: -1rem;
     transform: rotate(3deg);
-    background-color: rgba(155, 135, 245, 0.3);
+    background-color: var(--accent-peach);
+    color: var(--accent-emerald);
 }
 
 .badge-2 {
     bottom: 2.5rem;
     right: -1rem;
     transform: rotate(-3deg);
-    background-color: rgba(253, 164, 175, 0.3);
+    background-color: var(--accent-emerald);
+    color: var(--white);
 }
 
 .product-title {
@@ -454,7 +458,7 @@ body {
 }
 
 .check-icon {
-    color: var(--primary-color);
+    color: var(--accent-emerald);
     font-weight: 600;
     margin-top: 0.125rem;
 }
@@ -485,8 +489,8 @@ body {
 }
 
 .discount-badge {
-    background-color: rgba(253, 164, 175, 0.8);
-    color: var(--primary-dark);
+    background-color: var(--accent-gold);
+    color: var(--accent-emerald);
     font-weight: 600;
     font-size: 0.875rem;
     padding: 0.25rem 0.75rem;
@@ -507,7 +511,7 @@ body {
 
 .testimonial-card {
     background-color: var(--white);
-    border: 1px solid rgba(155, 135, 245, 0.2);
+    border: 1px solid var(--accent-peach);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -566,7 +570,7 @@ body {
 }
 
 .faq-item {
-    border-bottom: 1px solid rgba(155, 135, 245, 0.2);
+    border-bottom: 1px solid var(--accent-peach);
 }
 
 .faq-question {
@@ -579,7 +583,7 @@ body {
 }
 
 .faq-question:hover {
-    color: var(--primary-dark);
+    color: var(--accent-emerald);
 }
 
 .faq-question h3 {
@@ -616,7 +620,7 @@ body {
 /* CTA Section */
 .cta-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, var(--light-purple), rgba(253, 164, 175, 0.7));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-gold));
     position: relative;
     overflow: hidden;
 }
@@ -672,8 +676,8 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--gray-50);
-    border-top: 1px solid var(--gray-200);
+    background-color: var(--light-purple);
+    border-top: 1px solid var(--accent-peach);
     padding: 3rem 0 1.5rem;
 }
 
@@ -687,7 +691,7 @@ body {
 .footer-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-dark);
+    color: var(--accent-emerald);
     margin-bottom: 1rem;
 }
 
@@ -701,7 +705,7 @@ body {
 .footer-title {
     font-weight: 600;
     font-size: 1rem;
-    color: var(--gray-800);
+    color: var(--accent-emerald);
     margin-bottom: 1rem;
 }
 
@@ -721,11 +725,11 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--accent-emerald);
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--gray-200);
+    border-top: 1px solid var(--accent-peach);
     padding-top: 1.5rem;
     text-align: center;
 }
