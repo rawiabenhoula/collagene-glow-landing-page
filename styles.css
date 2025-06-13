@@ -433,6 +433,14 @@ body {
     color: var(--white);
 }
 
+.badge-3 {
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%) rotate(-8deg);
+    background-color: var(--accent-gold);
+    color: var(--accent-emerald);
+}
+
 .product-title {
     font-size: 2.5rem;
     font-weight: 700;
