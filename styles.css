@@ -1,3 +1,4 @@
+
 /* Reset et variables CSS */
 :root {
     --primary-color: #2d5a47;
@@ -146,6 +147,23 @@ body {
 
 .nav-link:hover {
     color: var(--primary-color);
+}
+
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.nav-logo-link:hover {
+    transform: scale(1.05);
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
 }
 
 .mobile-menu-btn {
